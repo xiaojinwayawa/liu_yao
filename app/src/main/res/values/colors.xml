@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 水墨风主题颜色 -->
+    <color name="primary">#8B7355</color>
+    <color name="primary_dark">#6B5744</color>
+    <color name="accent">#C72C2C</color>
+    <color name="background">#F5F5F0</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_background">#2C2C2C</color>
+    <color name="on_surface">#2C2C2C</color>
+
+    <!-- 水墨风特色颜色 -->
+    <color name="ink_black">#1A1A1A</color>
+    <color name="ink_gray">#666666</color>
+    <color name="ink_light">#999999</color>
+    <color name="paper_bg">#F7F8FA</color>
+    <color name="card_bg">#FFFFFF</color>
+
+    <!-- 吉凶颜色 -->
+    <color name="ji_color">#07A081</color>
+    <color name="xiong_color">#C72C2C</color>
+
+    <!-- 分割线颜色 -->
+    <color name="divider">#E8E8E8</color>
+
+    <!-- 按钮颜色 -->
+    <color name="btn_primary">#C72C2C</color>
+    <color name="btn_secondary">#EEEEEE</color>
+    <color name="btn_text_secondary">#333333</color>
+</resources>

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_screen">
+
+        <!-- 标题栏 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/card_bg"
+            android:elevation="@dimen/card_elevation"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_card">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_main"
+                android:textColor="@color/ink_black"
+                android:textSize="@dimen/text_size_lg"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_xs"
+                android:text="@string/subtitle_main"
+                android:textColor="@color/ink_gray"
+                android:textSize="@dimen/text_size_xs" />
+        </LinearLayout>
+
+        <!-- 快捷按钮 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btnNowTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_sm"
+                android:layout_weight="1"
+                android:background="@drawable/btn_secondary"
+                android:gravity="center"
+                android:padding="@dimen/spacing_md"
+                android:text="@string/btn_now_time"
+                android:textColor="@color/btn_text_secondary"
+                android:textSize="@dimen/text_size_sm" />
+
+            <TextView
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_sm"
+                android:layout_weight="1"
+                android:background="@drawable/btn_secondary"
+                android:gravity="center"
+                android:padding="@dimen/spacing_md"
+                android:text="@string/btn_clear"
+                android:textColor="@color/btn_text_secondary"
+                android:textSize="@dimen/text_size_sm" />
+        </LinearLayout>
+
+        <!-- 公历卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:background="@drawable/card_bg"
+            android:elevation="@dimen/card_elevation"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_card">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:text="@string/solar_calendar"
+                android:textColor="@color/accent"
+                android:textSize="@dimen/text_size_md"
+                android:textStyle="bold" />
+
+            <!-- 年月日 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/year"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <Spinner
+                        android:id="@+id/spinnerYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_bg"
+                        android:padding="@dimen/spacing_sm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/month"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <Spinner
+                        android:id="@+id/spinnerMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_bg"
+                        android:padding="@dimen/spacing_sm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/day"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <Spinner
+                        android:id="@+id/spinnerDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_bg"
+                        android:padding="@dimen/spacing_sm" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 时分 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hour"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <Spinner
+                        android:id="@+id/spinnerHour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_bg"
+                        android:padding="@dimen/spacing_sm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/minute"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <Spinner
+                        android:id="@+id/spinnerMinute"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_bg"
+                        android:padding="@dimen/spacing_sm" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 同步提示 -->
+        <TextView
+            android:id="@+id/tvSyncTip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:gravity="center"
+            android:text="@string/sync_tip"
+            android:textColor="@color/ji_color"
+            android:textSize="@dimen/text_size_xs" />
+
+        <!-- 农历卡片 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:background="@drawable/card_bg"
+            android:elevation="@dimen/card_elevation"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_card">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:text="@string/lunar_calendar"
+                android:textColor="@color/accent"
+                android:textSize="@dimen/text_size_md"
+                android:textStyle="bold" />
+
+            <!-- 干支年、月、日 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/gan_zhi_year"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <TextView
+                        android:id="@+id/tvLunarYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input_bg"
+                        android:padding="@dimen/spacing_sm"
+                        android:textColor="@color/ink_black"
+                        android:textSize="@dimen/text_size_sm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lunar_month"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <TextView
+                        android:id="@+id/tvLunarMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input_bg"
+                        android:padding="@dimen/spacing_sm"
+                        android:textColor="@color/ink_black"
+                        android:textSize="@dimen/text_size_sm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/lunar_day"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <TextView
+                        android:id="@+id/tvLunarDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input_bg"
+                        android:padding="@dimen/spacing_sm"
+                        android:textColor="@color/ink_black"
+                        android:textSize="@dimen/text_size_sm" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 时辰、生肖 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shi_chen"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <TextView
+                        android:id="@+id/tvShiChen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input_bg"
+                        android:padding="@dimen/spacing_sm"
+                        android:textColor="@color/ink_black"
+                        android:textSize="@dimen/text_size_sm" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sheng_xiao"
+                        android:textColor="@color/ink_gray"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <TextView
+                        android:id="@+id/tvShengXiao"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/input_bg"
+                        android:padding="@dimen/spacing_sm"
+                        android:textColor="@color/ink_black"
+                        android:textSize="@dimen/text_size_sm" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 开始推算按钮 -->
+        <TextView
+            android:id="@+id/btnCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:background="@drawable/btn_primary"
+            android:gravity="center"
+            android:padding="@dimen/spacing_md"
+            android:text="@string/btn_calculate"
+            android:textColor="@color/on_primary"
+            android:textSize="@dimen/text_size_md"
+            android:textStyle="bold" />
+
+        <!-- 推算结果卡片 -->
+        <LinearLayout
+            android:id="@+id/layoutResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:background="@drawable/card_bg"
+            android:elevation="@dimen/card_elevation"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_card"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_sm"
+                android:text="@string/result_title"
+                android:textColor="@color/accent"
+                android:textSize="@dimen/text_size_md"
+                android:textStyle="bold" />
+
+            <!-- 时间信息 -->
+            <TextView
+                android:id="@+id/tvResultTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_md"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/ink_gray"
+                android:textSize="@dimen/text_size_sm" />
+
+            <!-- 三宫展示 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:background="@drawable/palace_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_md">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/moon_palace"
+                        android:textColor="@color/ink_light"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <TextView
+                        android:id="@+id/tvMoonPalace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:textColor="@color/ji_color"
+                        android:textSize="@dimen/text_size_md"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_sm"
+                    android:layout_weight="1"
+                    android:background="@drawable/palace_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_md">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/day_palace"
+                        android:textColor="@color/ink_light"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <TextView
+                        android:id="@+id/tvDayPalace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:textColor="@color/ji_color"
+                        android:textSize="@dimen/text_size_md"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/palace_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_md">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hour_palace"
+                        android:textColor="@color/ink_light"
+                        android:textSize="@dimen/text_size_xs" />
+
+                    <TextView
+                        android:id="@+id/tvHourPalace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:textColor="@color/ji_color"
+                        android:textSize="@dimen/text_size_md"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 断语 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_md"
+                android:text="@string/duan_yu"
+                android:textColor="@color/ink_black"
+                android:textSize="@dimen/text_size_sm"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDuanYu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:lineSpacingExtra="6dp"
+                android:textColor="@color/ink_black"
+                android:textSize="@dimen/text_size_sm" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
