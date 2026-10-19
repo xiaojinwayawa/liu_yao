@@ -1363,8 +1363,11 @@ color bright_foreground_inverse_material_dark
 color bright_foreground_inverse_material_light
 color bright_foreground_material_dark
 color bright_foreground_material_light
+color btn_ai_text
+color btn_disabled
 color btn_primary
 color btn_secondary
+color btn_text_disabled
 color btn_text_secondary
 color button_material_dark
 color button_material_light
@@ -3004,6 +3007,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable btn_ai
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3215,8 +3219,10 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btnAiJieGua
 id btnCalculate
 id btnClear
+id btnJieGua
 id btnNowTime
 id buttonPanel
 id cache_measures
@@ -3299,6 +3305,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id etQuestion
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3606,6 +3613,7 @@ id tvLunarDay
 id tvLunarMonth
 id tvLunarYear
 id tvMoonPalace
+id tvResult
 id tvResultTime
 id tvShengXiao
 id tvShiChen
@@ -3747,6 +3755,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_ai_jiegua
 layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -3857,6 +3866,17 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string ai_btn_jiegua
+string ai_btn_loading
+string ai_error_empty_question
+string ai_error_failed
+string ai_need_calculate_first
+string ai_question_hint
+string ai_question_label
+string ai_result_hint
+string ai_result_label
+string ai_subtitle
+string ai_title
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
@@ -3866,6 +3886,7 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string btn_ai_jiegua
 string btn_calculate
 string btn_clear
 string btn_now_time

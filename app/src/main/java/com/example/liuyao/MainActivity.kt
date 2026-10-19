@@ -1,5 +1,6 @@
 package com.example.liuyao
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
@@ -14,10 +15,19 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    // 推算完成后的起课参数（供 AI 智能解卦使用）
+    private var jieGuaMonth = 0   // 农历月（1~12）
+    private var jieGuaDay = 0     // 农历日（1~30）
+    private var jieGuaHourNum = 0 // 时辰序数（子=1 …… 亥=12）
+    private var hasCalculated = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // 推算完成前 AI 解卦按钮不可点击
+        binding.btnAiJieGua.isEnabled = false
 
         initSpinners()
         setupListeners()
@@ -85,11 +95,27 @@ class MainActivity : AppCompatActivity() {
             binding.tvShengXiao.text = ""
             binding.layoutResult.visibility = View.GONE
             binding.tvSyncTip.text = getString(R.string.sync_tip)
+            disableAiJieGua()
         }
 
         // 开始推算
         binding.btnCalculate.setOnClickListener {
             calculateResult()
+        }
+
+        // AI 智能解卦（推算完成后才可点击）
+        binding.btnAiJieGua.setOnClickListener {
+            if (!hasCalculated) {
+                Toast.makeText(this, R.string.ai_need_calculate_first, Toast.LENGTH_SHORT).show()
+            } else {
+                startActivity(
+                    Intent(this, AIJieGuaActivity::class.java).apply {
+                        putExtra(AIJieGuaActivity.EXTRA_MONTH, jieGuaMonth)
+                        putExtra(AIJieGuaActivity.EXTRA_DAY, jieGuaDay)
+                        putExtra(AIJieGuaActivity.EXTRA_HOUR, jieGuaHourNum)
+                    }
+                )
+            }
         }
 
         // 监听公历变化，自动更新农历
@@ -174,6 +200,13 @@ class MainActivity : AppCompatActivity() {
             }
             binding.tvDuanYu.text = duanYu
 
+            // 推算完毕，启用 AI 智能解卦并保存起课参数
+            jieGuaMonth = lunarDate.month
+            jieGuaDay = lunarDate.day
+            jieGuaHourNum = shiChen + 1 // 时辰序数（子=1 …… 亥=12）
+            hasCalculated = true
+            binding.btnAiJieGua.isEnabled = true
+
             // 滚动到结果
             binding.root.post {
                 binding.root.smoothScrollTo(0, binding.layoutResult.top)
@@ -181,5 +214,10 @@ class MainActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Toast.makeText(this, "计算失败：${e.message}", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun disableAiJieGua() {
+        hasCalculated = false
+        binding.btnAiJieGua.isEnabled = false
     }
 }

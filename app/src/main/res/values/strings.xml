@@ -10,6 +10,7 @@
     <string name="btn_now_time">取当前时间</string>
     <string name="btn_clear">清空重算</string>
     <string name="btn_calculate">开始推算</string>
+    <string name="btn_ai_jiegua">AI 智能解卦</string>
 
     <!-- 公历 -->
     <string name="solar_calendar">公历（阳历）</string>
@@ -53,4 +54,17 @@
         <item>戌时 (19-21点)</item>
         <item>亥时 (21-23点)</item>
     </string-array>
+
+    <!-- AI 智能解卦 -->
+    <string name="ai_title">AI 智能解卦</string>
+    <string name="ai_subtitle">结合刚才的卦象，AI 为你深度解卦</string>
+    <string name="ai_question_label">我想问的问题</string>
+    <string name="ai_question_hint">请输入你要问的详细问题，例如：我昨天丢的黑色包包去哪了？</string>
+    <string name="ai_result_label">解卦结果</string>
+    <string name="ai_result_hint">请输入问题后点击下方「解卦」按钮，AI 将结合卦象为你解答…</string>
+    <string name="ai_btn_jiegua">解卦</string>
+    <string name="ai_btn_loading">解卦中…</string>
+    <string name="ai_need_calculate_first">请先点击「开始推算」完成起课</string>
+    <string name="ai_error_empty_question">请先输入你要问的问题</string>
+    <string name="ai_error_failed">解卦失败：%1$s</string>
 </resources>

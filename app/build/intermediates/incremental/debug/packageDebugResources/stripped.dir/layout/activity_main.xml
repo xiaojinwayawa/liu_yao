@@ -393,6 +393,21 @@
             android:textSize="@dimen/text_size_md"
             android:textStyle="bold" />
 
+        <!-- AI 智能解卦按钮（推算完成前黑色不可点击） -->
+        <TextView
+            android:id="@+id/btnAiJieGua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_sm"
+            android:background="@drawable/btn_ai"
+            android:enabled="false"
+            android:gravity="center"
+            android:padding="@dimen/spacing_md"
+            android:text="@string/btn_ai_jiegua"
+            android:textColor="@color/btn_ai_text"
+            android:textSize="@dimen/text_size_md"
+            android:textStyle="bold" />
+
         <!-- 推算结果卡片 -->
         <LinearLayout
             android:id="@+id/layoutResult"

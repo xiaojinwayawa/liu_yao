@@ -24,16 +24,28 @@
         "source": "com.example.liuyao.app-main-33:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.liuyao.app-debug-31:/drawable_spinner_bg.xml.flat",
-        "source": "com.example.liuyao.app-main-33:/drawable/spinner_bg.xml"
-    },
-    {
-        "merged": "com.example.liuyao.app-debug-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.liuyao.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.example.liuyao.app-debug-31:/drawable_btn_ai.xml.flat",
+        "source": "com.example.liuyao.app-main-33:/drawable/btn_ai.xml"
     },
     {
         "merged": "com.example.liuyao.app-debug-31:/drawable_btn_primary.xml.flat",
         "source": "com.example.liuyao.app-main-33:/drawable/btn_primary.xml"
+    },
+    {
+        "merged": "com.example.liuyao.app-debug-31:/color_btn_ai_text.xml.flat",
+        "source": "com.example.liuyao.app-main-33:/color/btn_ai_text.xml"
+    },
+    {
+        "merged": "com.example.liuyao.app-debug-31:/drawable_spinner_bg.xml.flat",
+        "source": "com.example.liuyao.app-main-33:/drawable/spinner_bg.xml"
+    },
+    {
+        "merged": "com.example.liuyao.app-debug-31:/layout_activity_ai_jiegua.xml.flat",
+        "source": "com.example.liuyao.app-main-33:/layout/activity_ai_jiegua.xml"
+    },
+    {
+        "merged": "com.example.liuyao.app-debug-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.liuyao.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
         "merged": "com.example.liuyao.app-debug-31:/drawable_input_bg.xml.flat",

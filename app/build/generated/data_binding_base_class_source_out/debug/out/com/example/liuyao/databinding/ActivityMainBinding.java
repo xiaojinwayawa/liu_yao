@@ -22,6 +22,9 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
+  public final TextView btnAiJieGua;
+
+  @NonNull
   public final TextView btnCalculate;
 
   @NonNull
@@ -81,15 +84,16 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView tvSyncTip;
 
-  private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull TextView btnCalculate,
-      @NonNull TextView btnClear, @NonNull TextView btnNowTime, @NonNull LinearLayout layoutResult,
-      @NonNull Spinner spinnerDay, @NonNull Spinner spinnerHour, @NonNull Spinner spinnerMinute,
-      @NonNull Spinner spinnerMonth, @NonNull Spinner spinnerYear, @NonNull TextView tvDayPalace,
-      @NonNull TextView tvDuanYu, @NonNull TextView tvHourPalace, @NonNull TextView tvLunarDay,
-      @NonNull TextView tvLunarMonth, @NonNull TextView tvLunarYear, @NonNull TextView tvMoonPalace,
-      @NonNull TextView tvResultTime, @NonNull TextView tvShengXiao, @NonNull TextView tvShiChen,
-      @NonNull TextView tvSyncTip) {
+  private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull TextView btnAiJieGua,
+      @NonNull TextView btnCalculate, @NonNull TextView btnClear, @NonNull TextView btnNowTime,
+      @NonNull LinearLayout layoutResult, @NonNull Spinner spinnerDay, @NonNull Spinner spinnerHour,
+      @NonNull Spinner spinnerMinute, @NonNull Spinner spinnerMonth, @NonNull Spinner spinnerYear,
+      @NonNull TextView tvDayPalace, @NonNull TextView tvDuanYu, @NonNull TextView tvHourPalace,
+      @NonNull TextView tvLunarDay, @NonNull TextView tvLunarMonth, @NonNull TextView tvLunarYear,
+      @NonNull TextView tvMoonPalace, @NonNull TextView tvResultTime, @NonNull TextView tvShengXiao,
+      @NonNull TextView tvShiChen, @NonNull TextView tvSyncTip) {
     this.rootView = rootView;
+    this.btnAiJieGua = btnAiJieGua;
     this.btnCalculate = btnCalculate;
     this.btnClear = btnClear;
     this.btnNowTime = btnNowTime;
@@ -139,6 +143,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnAiJieGua;
+      TextView btnAiJieGua = ViewBindings.findChildViewById(rootView, id);
+      if (btnAiJieGua == null) {
+        break missingId;
+      }
+
       id = R.id.btnCalculate;
       TextView btnCalculate = ViewBindings.findChildViewById(rootView, id);
       if (btnCalculate == null) {
@@ -259,10 +269,10 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ScrollView) rootView, btnCalculate, btnClear, btnNowTime,
-          layoutResult, spinnerDay, spinnerHour, spinnerMinute, spinnerMonth, spinnerYear,
-          tvDayPalace, tvDuanYu, tvHourPalace, tvLunarDay, tvLunarMonth, tvLunarYear, tvMoonPalace,
-          tvResultTime, tvShengXiao, tvShiChen, tvSyncTip);
+      return new ActivityMainBinding((ScrollView) rootView, btnAiJieGua, btnCalculate, btnClear,
+          btnNowTime, layoutResult, spinnerDay, spinnerHour, spinnerMinute, spinnerMonth,
+          spinnerYear, tvDayPalace, tvDuanYu, tvHourPalace, tvLunarDay, tvLunarMonth, tvLunarYear,
+          tvMoonPalace, tvResultTime, tvShengXiao, tvShiChen, tvSyncTip);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

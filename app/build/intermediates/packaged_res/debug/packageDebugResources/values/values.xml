@@ -16,8 +16,10 @@
     </string-array>
     <color name="accent">#C72C2C</color>
     <color name="background">#F5F5F0</color>
+    <color name="btn_disabled">#555555</color>
     <color name="btn_primary">#C72C2C</color>
     <color name="btn_secondary">#EEEEEE</color>
+    <color name="btn_text_disabled">#CCCCCC</color>
     <color name="btn_text_secondary">#333333</color>
     <color name="card_bg">#FFFFFF</color>
     <color name="divider">#E8E8E8</color>
@@ -49,7 +51,19 @@
     <dimen name="text_size_sm">14sp</dimen>
     <dimen name="text_size_xl">20sp</dimen>
     <dimen name="text_size_xs">12sp</dimen>
+    <string name="ai_btn_jiegua">解卦</string>
+    <string name="ai_btn_loading">解卦中…</string>
+    <string name="ai_error_empty_question">请先输入你要问的问题</string>
+    <string name="ai_error_failed">解卦失败：%1$s</string>
+    <string name="ai_need_calculate_first">请先点击「开始推算」完成起课</string>
+    <string name="ai_question_hint">请输入你要问的详细问题，例如：我昨天丢的黑色包包去哪了？</string>
+    <string name="ai_question_label">我想问的问题</string>
+    <string name="ai_result_hint">请输入问题后点击下方「解卦」按钮，AI 将结合卦象为你解答…</string>
+    <string name="ai_result_label">解卦结果</string>
+    <string name="ai_subtitle">结合刚才的卦象，AI 为你深度解卦</string>
+    <string name="ai_title">AI 智能解卦</string>
     <string name="app_name">小六壬推算</string>
+    <string name="btn_ai_jiegua">AI 智能解卦</string>
     <string name="btn_calculate">开始推算</string>
     <string name="btn_clear">清空重算</string>
     <string name="btn_now_time">取当前时间</string>

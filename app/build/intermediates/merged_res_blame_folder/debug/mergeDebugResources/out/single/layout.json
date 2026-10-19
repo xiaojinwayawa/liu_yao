@@ -1,5 +1,9 @@
 [
     {
+        "merged": "com.example.liuyao.app-mergeDebugResources-30:/layout/activity_ai_jiegua.xml",
+        "source": "com.example.liuyao.app-main-33:/layout/activity_ai_jiegua.xml"
+    },
+    {
         "merged": "com.example.liuyao.app-mergeDebugResources-30:/layout/activity_main.xml",
         "source": "com.example.liuyao.app-main-33:/layout/activity_main.xml"
     }
